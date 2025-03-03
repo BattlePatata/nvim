@@ -30,6 +30,12 @@ return {
 			lspconfig.stimulus_ls.setup({
 				capabilities = capabilities
 			})
+			lspconfig.marksman.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.csharp_ls.setup({
+				capabilities = capabilities,
+			})
 			lspconfig.intelephense.setup({
 				capabilities = capabilities,
                 root_dir = lspconfig.util.root_pattern(".git", "composer.json"),
