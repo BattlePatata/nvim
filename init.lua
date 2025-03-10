@@ -10,7 +10,6 @@ if not vim.loop.fs_stat(lazypath) then
     })
 end
 
-vim.keymap.set("v", "<leader>y", '"+y')
 vim.opt.rtp:prepend(lazypath)
 vim.filetype.add({
     extension = {
