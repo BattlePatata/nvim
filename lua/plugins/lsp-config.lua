@@ -7,9 +7,12 @@ return {
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
-		opts = {
-			auto_install = true,
-		},
+        config = function()
+            require("mason-lspconfig").setup({
+                ensure_installed = { "lua_ls" },
+                auto_install = true
+            })
+        end
 	},
 	{
 		"neovim/nvim-lspconfig",
@@ -38,6 +41,12 @@ return {
 				capabilities = capabilities,
                 root_dir = lspconfig.util.root_pattern(".git", "composer.json"),
 			})
+
+            vim.diagnostic.config({
+                virtual_text = {
+                    prefix = "■", -- ■ Could be '--', '▎', 'x'
+                },
+            })
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 			vim.keymap.set({ "n" }, "<leader>ca", vim.lsp.buf.code_action, {})
