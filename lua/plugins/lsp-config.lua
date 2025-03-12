@@ -2,17 +2,22 @@ return {
 	{
 		"williamboman/mason.nvim",
 		config = function()
-			require("mason").setup()
+			require("mason").setup({
+                PATH = "prepend"
+            })
 		end
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls" },
+                ensure_installed = {
+                    "lua_ls"
+                },
                 auto_install = true
             })
         end
+
 	},
 	{
 		"neovim/nvim-lspconfig",
