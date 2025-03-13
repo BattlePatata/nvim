@@ -7,3 +7,4 @@ vim.cmd("set rnu")
 vim.g.mapleader = " "
 vim.keymap.set({ "v", "n" }, "<leader>c", '"*y')
 vim.keymap.set({ "v", "n" }, "<leader>v", '"*p')
+vim.keymap.set({ "v", "n" }, "<leader>V", '"*P')

@@ -18,6 +18,14 @@ return {
             },
         })
 
+        parser_config.razor = {
+            vim.filetype.add({
+                pattern = {
+                    [".*%.razor"] = "razor"
+                }
+            })
+        }
+
 		local config = require("nvim-treesitter.configs")
 		config.setup({
 			ensure_installed = {
@@ -36,6 +44,7 @@ return {
 				"c_sharp",
 				"cmake",
 				"cpp",
+                "razor",
 			},
 			sync_install = true,
 			auto_install = true,
