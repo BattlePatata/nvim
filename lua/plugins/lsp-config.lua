@@ -38,16 +38,16 @@ return {
 			lspconfig.marksman.setup({
 				capabilities = capabilities,
 			})
-			--			lspconfig.csharp_ls.setup({
-			--				capabilities = capabilities,
-			--			})
-			lspconfig.omnisharp.setup({
-				cmd = { "omnisharp", "--languageserver", "--hostPID", tostring(vim.fn.getpid()) },
-				enable_roslyn_analyzers = true,
-				organize_imports_on_format = true,
-				enable_import_completion = true,
-				filetypes = { "cs", "razor", "xml" },
-			})
+		--	lspconfig.csharp_ls.setup({
+		--		capabilities = capabilities,
+		--	})
+		    lspconfig.omnisharp.setup({
+		    	cmd = { "omnisharp", "--languageserver", "--hostPID", tostring(vim.fn.getpid()) },
+		    	enable_roslyn_analyzers = true,
+		    	organize_imports_on_format = true,
+		    	enable_import_completion = true,
+		    	filetypes = { "cs", "razor", "xml" },
+		    })
 			lspconfig.intelephense.setup({
 				capabilities = capabilities,
 				root_dir = lspconfig.util.root_pattern(".git", "composer.json"),
