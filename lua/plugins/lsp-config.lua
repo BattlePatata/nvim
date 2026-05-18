@@ -49,9 +49,11 @@ return {
             --	lspconfig.jsonls.setup({
             --		capabilities = capabilities,
             --	})
-            --	lspconfig.stimulus_ls.setup({
-            --		capabilities = capabilities,
-            --	})
+            vim.lsp.config("stimulus_ls", {
+                cmd = {
+                    "--max-old-space-size=8192",
+                }
+            })
             --	lspconfig.marksman.setup({
             --		capabilities = capabilities,
             --	})
